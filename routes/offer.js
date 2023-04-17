@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const cors = require("cors");
 const fileUpload = require("express-fileupload");
 
 const cloudinary = require("cloudinary").v2;
@@ -11,6 +12,9 @@ const Offer = require("../models/Offer");
 const isAuthenticated = require("../middlewares/isAuthenticated");
 
 const convertToBase64 = require("../utils/converterB64");
+
+router.use(express.json());
+router.use(cors());
 
 router.post(
   "/offer/publish",

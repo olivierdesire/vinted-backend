@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const cors = require("cors");
 
 const SHA256 = require("crypto-js/sha256");
 const base64 = require("crypto-js/enc-base64");
@@ -13,6 +14,9 @@ const convertToBase64 = require("../utils/converterB64");
 
 // Import modèles
 const User = require("../models/User");
+
+router.use(express.json());
+router.use(cors());
 
 // Routes user
 router.post("/user/signup", fileUpload(), async (req, res) => {
