@@ -26,6 +26,9 @@ app.use(offerRoutes);
 const userRoutes = require("./routes/user");
 app.use(userRoutes);
 
+const paymentRoutes = require("./routes/payment");
+app.use(paymentRoutes);
+
 app.all("*", (req, res) => {
   try {
     return res.status(404).json({ message: "Not found" });
