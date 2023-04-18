@@ -7,7 +7,7 @@ router.use(express.json());
 router.use(cors());
 
 router.post("/payment", async (req, res) => {
-  console.log("/payment");
+  console.log("Route /payment");
 
   // Destructuration du body
   const { amount, title, token } = req.body;
